@@ -30,7 +30,7 @@ namespace Startup.Controllers
             }
             else
             {
-                json = JsonConvert.SerializeObject(card);
+                return new OkObjectResult(card); ;
 
             }
             return Ok(json) ;
