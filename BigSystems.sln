@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startup", "Startup\Startup.csproj", "{1C19F0A4-F4B7-4C03-8FF5-DAA2A8EC72C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Startup", "Startup\Startup.csproj", "{1C19F0A4-F4B7-4C03-8FF5-DAA2A8EC72C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST", "TEST\TEST.csproj", "{C5AAA59F-C371-4735-8C42-39AB7CBE2E70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingCaseOne", "TEST\ParkingCaseOne.csproj", "{C5AAA59F-C371-4735-8C42-39AB7CBE2E70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
