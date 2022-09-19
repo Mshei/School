@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace Startup.Controllers
+namespace AssignmentOne.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -11,9 +11,9 @@ namespace Startup.Controllers
         public IActionResult Get()
         {
             CardRepository cardRepository = new CardRepository();
-            String card;
-            String color;
-            String result;
+            string card;
+            string color;
+            string result;
             Random rand = new Random();
             string json = "";
             int index = rand.Next(cardRepository.cards.Length);
@@ -23,7 +23,7 @@ namespace Startup.Controllers
             {
                 index = rand.Next(cardRepository.colors.Length);
                 color = cardRepository.colors[index];
-                result = card + " Of "+ color;
+                result = card + " Of " + color;
                 json = JsonConvert.SerializeObject(result);
 
 
@@ -33,7 +33,7 @@ namespace Startup.Controllers
                 return new OkObjectResult(card); ;
 
             }
-            return Ok(json) ;
+            return Ok(json);
         }
     }
 }
