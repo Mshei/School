@@ -16,7 +16,7 @@ namespace ParkingLotCase.Controllers
         [HttpGet(Name = "GetParkingLot")]
         public IActionResult Get()
         {
-            ParkingSpaces registerParkingSpace = new ParkingSpaces("DC5832");
+            ParkingSpaces registerParkingSpace = new ParkingSpaces("DC58321");
             registerParkingSpace.PhoneNumber = "+45 12345678";
             registerParkingSpace.Email = "my@email.org";
             registerParkingSpace.DateTime = DateTime.Now;
@@ -26,24 +26,9 @@ namespace ParkingLotCase.Controllers
             ParkingLotStore parkingLotStore = new ParkingLotStore();
             parkingLotStore.Save(registerParkingSpace);
 
-            string json;
+            ParkingLotReturnJson parkingLotReturnJson = new ParkingLotReturnJson();
 
-            const string V = "not parked";
-
-
-            if (parkingLotStore.checkParking(registerParkingSpace))
-            {
-                json = JsonConvert.SerializeObject(string.Format("Car {0} is parked at floor {1} at parking space {2} ", registerParkingSpace.RegisterNumber, registerParkingSpace.ParkingFloor, registerParkingSpace.ParkingSpace));
-
-                return new OkObjectResult(json);
-
-            }
-            else
-            { 
-                json = JsonConvert.SerializeObject(string.Format("Car {0} is not parked ", registerParkingSpace.RegisterNumber));
-                return Ok(json);
-            }
-
+            return parkingLotReturnJson.result(registerParkingSpace);
 
         }
     }

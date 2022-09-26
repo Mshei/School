@@ -5,7 +5,11 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssignmentOne", "Startup\AssignmentOne.csproj", "{1C19F0A4-F4B7-4C03-8FF5-DAA2A8EC72C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLotCase", "ParkingLotCase\ParkingLotCase.csproj", "{6BA751B3-D8A2-4BE3-9D7B-24516FC47F26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingLotCase", "ParkingLotCase\ParkingLotCase.csproj", "{6BA751B3-D8A2-4BE3-9D7B-24516FC47F26}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotorApi", "MotorApi\MotorApi.csproj", "{AFAF5278-865F-4367-9AB5-B6CED2D0257C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendEmail", "SendEmail\SendEmail.csproj", "{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{6BA751B3-D8A2-4BE3-9D7B-24516FC47F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BA751B3-D8A2-4BE3-9D7B-24516FC47F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BA751B3-D8A2-4BE3-9D7B-24516FC47F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFAF5278-865F-4367-9AB5-B6CED2D0257C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAF5278-865F-4367-9AB5-B6CED2D0257C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAF5278-865F-4367-9AB5-B6CED2D0257C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAF5278-865F-4367-9AB5-B6CED2D0257C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
