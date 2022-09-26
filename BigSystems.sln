@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingLotCase", "ParkingLo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotorApi", "MotorApi\MotorApi.csproj", "{AFAF5278-865F-4367-9AB5-B6CED2D0257C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendEmail", "SendEmail\SendEmail.csproj", "{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendEmail", "SendEmail\SendEmail.csproj", "{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendParkingEmail", "SendParkingEmail\SendParkingEmail.csproj", "{73C14492-E387-4207-8BC3-8D913A1872BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF0BEEB5-AA9E-4B44-B3BD-2C14FE448CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C14492-E387-4207-8BC3-8D913A1872BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C14492-E387-4207-8BC3-8D913A1872BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C14492-E387-4207-8BC3-8D913A1872BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C14492-E387-4207-8BC3-8D913A1872BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

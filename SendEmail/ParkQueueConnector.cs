@@ -70,8 +70,8 @@
                 .ConfigureServices((hostContext, services) =>
                 {
                     var smtpHost = Environment.GetEnvironmentVariable("Outlook");
-                    var smtpUser = Environment.GetEnvironmentVariable("ms@axdata.com");
-                    var smtpPass = Environment.GetEnvironmentVariable("Dugu6544");
+                    var smtpUser = Environment.GetEnvironmentVariable("");
+                    var smtpPass = Environment.GetEnvironmentVariable("");
 
                     services
                         .AddFluentEmail("ms@axdata.com")

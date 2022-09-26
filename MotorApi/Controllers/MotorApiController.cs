@@ -20,12 +20,12 @@ namespace MotorApi.Controllers
         }
 
         [HttpGet(Name = "GetMotorApi")]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
             CarDescription description = new CarDescription();
 
             //motorApiService = new MotorApiService("www.test.com", );
-            description = motorApiService.GetDescriptionAsync(licensePlate).Result as CarDescription;
+            description = await motorApiService.GetDescriptionAsync(licensePlate);
 
             //string json = "TEST";
 
