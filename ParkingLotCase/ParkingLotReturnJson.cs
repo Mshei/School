@@ -12,6 +12,7 @@ namespace ParkingLotCase
         public string RegisterNumber { get; set; }
         public int ParkingFloor { get; set; }
         public Boolean IsParked { get; set; }
+        public Boolean emailSent { get; set; }
         /*
          * I have created two results methods, are one of them better then the other?
          * */
@@ -51,7 +52,8 @@ namespace ParkingLotCase
                                            DateTime = _registerParkingSpace.DateTime, 
                                            IsParked = _registerParkingSpace.IsParked, 
                                            ParkingSpace = _registerParkingSpace.ParkingSpace, 
-                                           RegisterNumber = _registerParkingSpace.RegisterNumber },
+                                           RegisterNumber = _registerParkingSpace.RegisterNumber,
+                                           emailSent = _registerParkingSpace.emailSent},
                     }
                 });
                 return new OkObjectResult(json);

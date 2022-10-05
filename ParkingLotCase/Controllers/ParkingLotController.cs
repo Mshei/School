@@ -1,5 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EventStore;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using SendParkingEmail.Configurations;
+using SendParkingEmail.Controllers;
+using SendParkingEmail.Model;
+using SendParkingEmail.Services;
 
 namespace ParkingLotCase.Controllers
 {
@@ -8,23 +13,33 @@ namespace ParkingLotCase.Controllers
     public class ParkingLotController : Controller
     {
         private readonly ILogger<ParkingLotController> _logger;
-
-        public ParkingLotController(ILogger<ParkingLotController> logger)
+        IParkingLotServices parkingLotServices;
+        private readonly IEventStore eventStore;
+        public ParkingLotController(ILogger<ParkingLotController> logger, IParkingLotServices iparkingLotServices, IEventStore eventStore)
         {
             _logger = logger;
+            parkingLotServices = iparkingLotServices;
+            this.eventStore = eventStore;
         }
-        [HttpGet(Name = "GetParkingLot")]
-        public IActionResult Get()
+        [HttpGet(Name = "SetParkingLot")]
+        public async Task<IActionResult> Get(String _phoneNumber, String _email, String _regNum)
         {
-            ParkingSpaces registerParkingSpace = new ParkingSpaces("DC58321");
-            registerParkingSpace.PhoneNumber = "+45 12345678";
-            registerParkingSpace.Email = "my@email.org";
+            Random rnd = new Random();
+            bool sent;
+
+            ParkingSpaces registerParkingSpace = new ParkingSpaces(_regNum);
+            registerParkingSpace.PhoneNumber = _phoneNumber;
+            registerParkingSpace.Email = _email;
             registerParkingSpace.DateTime = DateTime.Now;
-            registerParkingSpace.ParkingFloor = 2;
-            registerParkingSpace.ParkingSpace = "P1";
+            registerParkingSpace.ParkingFloor = rnd.Next(1, 10);
+            registerParkingSpace.ParkingSpace = "P" + rnd.Next(1, 10); ;
+
+            registerParkingSpace = await parkingLotServices.GetDescriptionAsync(registerParkingSpace, _regNum);
 
             ParkingLotStore parkingLotStore = new ParkingLotStore();
-            parkingLotStore.Save(registerParkingSpace);
+            parkingLotStore.Save(registerParkingSpace, eventStore);
+
+            registerParkingSpace.emailSent = await parkingLotServices.SendEmailAsync(_regNum, _email);
 
             ParkingLotReturnJson parkingLotReturnJson = new ParkingLotReturnJson();
 

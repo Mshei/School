@@ -29,7 +29,7 @@
         public string chassis_type { get; set; }
         public int engine_cylinders { get; set; }
         public int engine_volume { get; set; }
-        public int engine_power { get; set; }
+        public double engine_power { get; set; }
         public string fuel_type { get; set; }
         public string registration_zipcode { get; set; }
         public long vehicle_id { get; set; }

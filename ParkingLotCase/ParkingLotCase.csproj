@@ -11,11 +11,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventStore\EventStore.csproj" />
+    <ProjectReference Include="..\MotorApi\MotorApi.csproj" />
+    <ProjectReference Include="..\SendParkingEmail\SendParkingEmail.csproj" />
   </ItemGroup>
 
 </Project>

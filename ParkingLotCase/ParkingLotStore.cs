@@ -1,4 +1,5 @@
-﻿using static ParkingLotCase.ParkingLotStore;
+﻿using EventStore;
+using static ParkingLotCase.ParkingLotStore;
 
 namespace ParkingLotCase
 {
@@ -10,16 +11,24 @@ namespace ParkingLotCase
         Database.ContainsKey(_registerNumber)
         ? Database[_registerNumber]
         : new ParkingSpaces(_registerNumber);
-        public void Save(ParkingSpaces _parkingSpaces)
+        public void Save(ParkingSpaces _parkingSpaces, IEventStore _eventStore)
         {
             _parkingSpaces.IsParked = true;
             Database[_parkingSpaces.RegisterNumber] = _parkingSpaces;
 
+            _eventStore.Raise(
+            _parkingSpaces.RegisterNumber,
+            new { _parkingSpaces }, "Saved");
+
         }
 
-        public void delete(string _registerNumber)
+        public void delete(ParkingSpaces _parkingSpaces, IEventStore _eventStore)
         {
-            Database.Remove(_registerNumber);
+            Database.Remove(_parkingSpaces.RegisterNumber);
+
+            _eventStore.Raise(
+            _parkingSpaces.RegisterNumber,
+            new { _parkingSpaces }, "Deleted");
         }
 
         public Boolean checkParking(ParkingSpaces _parkingSpaces)

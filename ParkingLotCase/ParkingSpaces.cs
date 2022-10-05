@@ -13,7 +13,9 @@
         public string ParkingSpace { get; set; }
         public string RegisterNumber { get; set; }
         public int ParkingFloor { get; set; }
+        public string carÍnfo { get; set; }
         public Boolean IsParked { get; set; }
+        public Boolean emailSent { get; set; }
 
     }
 }
