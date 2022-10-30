@@ -25,14 +25,13 @@ namespace ParkingLotCase.Controllers
         public async Task<IActionResult> Get(String _phoneNumber, String _email, String _regNum)
         {
             Random rnd = new Random();
-            bool sent;
 
             ParkingSpaces registerParkingSpace = new ParkingSpaces(_regNum);
             registerParkingSpace.PhoneNumber = _phoneNumber;
             registerParkingSpace.Email = _email;
             registerParkingSpace.DateTime = DateTime.Now;
             registerParkingSpace.ParkingFloor = rnd.Next(1, 10);
-            registerParkingSpace.ParkingSpace = "P" + rnd.Next(1, 10); ;
+            registerParkingSpace.ParkingSpace = "P" + rnd.Next(1, 10);
 
             registerParkingSpace = await parkingLotServices.GetDescriptionAsync(registerParkingSpace, _regNum);
 

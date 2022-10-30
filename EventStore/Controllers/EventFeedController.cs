@@ -14,13 +14,17 @@ namespace EventStore.Controllers
         private readonly IEventStore eventStore;
         public EventFeedController(IEventStore eventStore) =>
         this.eventStore = eventStore;
-        [HttpGet("")]
-        public async Task<IActionResult> Get()
+        [HttpGet(Name = "GetEvents")]
+        public async Task<IActionResult> Get(string _licensePlate, Event _event)
         {
-            eventStore.GetEvents().Values.ToList();
+            string json = "";
+            /*
+            foreach (var dictionary in eventStore.getDictionary())
+            {
+                json += ("dictionary key is {0} and value is {1}", dictionary.Key, dictionary.Value);
+            }*/
 
-            string json;
-            json = JsonConvert.SerializeObject(eventStore.GetEvents().Values.ToList());
+            json = JsonConvert.SerializeObject(eventStore.GetEvents(_licensePlate, _event));
             
             if(json != null)
             {

@@ -1,4 +1,5 @@
 using EventStore;
+using ParkingPlateRecognizer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient<IEventStore, EventStore.EventStore>();
 builder.Services.AddTransient<IEventStore, EventStore.EventStore>();
-
+builder.Services.AddHttpClient<IParkingPlateRecognizerService, ParkingPlateRecognizerService>();
+builder.Services.AddTransient<IParkingPlateRecognizerService, ParkingPlateRecognizerService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

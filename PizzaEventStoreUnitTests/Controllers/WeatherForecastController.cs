@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventStore.Controllers
+namespace PizzaEventStoreUnitTests.Controllers
 {
     [ApiController]
     [Route("[controller]")]

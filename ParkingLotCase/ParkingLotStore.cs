@@ -16,9 +16,13 @@ namespace ParkingLotCase
             _parkingSpaces.IsParked = true;
             Database[_parkingSpaces.RegisterNumber] = _parkingSpaces;
 
-            _eventStore.Raise(
-            _parkingSpaces.RegisterNumber,
-            new { _parkingSpaces }, "Saved");
+            _eventStore.Raise(_parkingSpaces.RegisterNumber, 
+            "Parking",
+            DateTime.Now,
+            _parkingSpaces.ParkingSpace,
+            _parkingSpaces.ParkingFloor,
+            _parkingSpaces.Email,
+            _parkingSpaces.PhoneNumber);
 
         }
 
@@ -26,14 +30,18 @@ namespace ParkingLotCase
         {
             Database.Remove(_parkingSpaces.RegisterNumber);
 
-            _eventStore.Raise(
-            _parkingSpaces.RegisterNumber,
-            new { _parkingSpaces }, "Deleted");
+            _eventStore.Raise(_parkingSpaces.RegisterNumber,
+            "Delete",
+            DateTime.Now,
+            _parkingSpaces.ParkingSpace,
+            _parkingSpaces.ParkingFloor,
+            _parkingSpaces.Email,
+            _parkingSpaces.PhoneNumber);
         }
 
         public Boolean checkParking(ParkingSpaces _parkingSpaces)
         {
-            ParkingSpaces result, tmp;
+            ParkingSpaces result;
 
             if (Database.TryGetValue(_parkingSpaces.RegisterNumber, out result))
             {

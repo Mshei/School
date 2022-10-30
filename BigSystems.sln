@@ -13,7 +13,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendParkingEmail", "SendPar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventStore", "EventStore\EventStore.csproj", "{1BD05DD4-83CB-4BED-AF46-F1DA788D8B2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaEventStore", "PizzaEventStore\PizzaEventStore.csproj", "{64E0BFE8-4379-4D84-B0C3-F684963E95A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaEventStore", "PizzaEventStore\PizzaEventStore.csproj", "{64E0BFE8-4379-4D84-B0C3-F684963E95A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlateRecognizer", "D:\PlateRecognizer\PlateRecognizer\PlateRecognizer.csproj", "{C1C5541A-46FD-407E-9C1A-CE0260104411}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{3704C4DD-6C15-46E1-B020-F42313B850BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingPlateRecognizer", "ParkingPlateRecognizer\ParkingPlateRecognizer.csproj", "{9DD5FF40-6B08-467F-B5DE-24B28969879E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLotCaseTest", "PizzaEventStoreTest\ParkingLotCaseTest.csproj", "{69D70A6E-B479-4896-A681-5B67FB28887D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestUnit", "TestUnit", "{BA6F6E22-A191-4788-BC1C-8FB2FD82DEB6}"
+	ProjectSection(SolutionItems) = preProject
+		MocksHost.cs = MocksHost.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +58,25 @@ Global
 		{64E0BFE8-4379-4D84-B0C3-F684963E95A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64E0BFE8-4379-4D84-B0C3-F684963E95A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64E0BFE8-4379-4D84-B0C3-F684963E95A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C5541A-46FD-407E-9C1A-CE0260104411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C5541A-46FD-407E-9C1A-CE0260104411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C5541A-46FD-407E-9C1A-CE0260104411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C5541A-46FD-407E-9C1A-CE0260104411}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD5FF40-6B08-467F-B5DE-24B28969879E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD5FF40-6B08-467F-B5DE-24B28969879E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD5FF40-6B08-467F-B5DE-24B28969879E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD5FF40-6B08-467F-B5DE-24B28969879E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69D70A6E-B479-4896-A681-5B67FB28887D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D70A6E-B479-4896-A681-5B67FB28887D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D70A6E-B479-4896-A681-5B67FB28887D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D70A6E-B479-4896-A681-5B67FB28887D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1C5541A-46FD-407E-9C1A-CE0260104411} = {3704C4DD-6C15-46E1-B020-F42313B850BC}
+		{69D70A6E-B479-4896-A681-5B67FB28887D} = {BA6F6E22-A191-4788-BC1C-8FB2FD82DEB6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8F7747B-7AED-4D37-BE9B-9A72D8667FFD}

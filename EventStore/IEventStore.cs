@@ -4,9 +4,13 @@ namespace EventStore
 {
     public interface IEventStore
     {
-        public Dictionary<string, Event> GetEvents();
-        void Raise(string eventName, object content, string eventOccured);
-       
+        void Raise(string _licensePlate, string _typeEvent, DateTime _occuredAt, string _parkingSpace, int _parkingFloor, string _email, string _phoneNumber);
+        public Boolean GetEvents(string licenseNumber, Event content);
+        Dictionary<string, Event> getDictionary();
+
+        Boolean remove(string licenseNumber, Event content);
+        Boolean update(string licenseNumber, Event Content, Event newContent);
+
     }
     
 }

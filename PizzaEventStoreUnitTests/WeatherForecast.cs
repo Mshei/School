@@ -1,4 +1,4 @@
-namespace EventStore
+namespace PizzaEventStoreUnitTests
 {
     public class WeatherForecast
     {
