@@ -15,6 +15,7 @@ using Microsoft.Win32;
 using Moq;
 //using Mocks;
 using Newtonsoft.Json;
+using Org.BouncyCastle.Bcpg;
 using ParkingLotCase;
 using Xunit;
 using Xunit.Abstractions;
@@ -68,6 +69,7 @@ namespace ParkingLotCaseTest
             emailSent = await _sut.SendEmailAsync(_licensePlate, _email);
             // Assert
             Assert.True(emailSent, "Mail has been sent");
+            Assert.False(emailSent, "Mail has not sent");
 
         }
 
@@ -101,6 +103,7 @@ namespace ParkingLotCaseTest
 
             //Assert.IsType<ParkingSpaces>(registerParkingSpace);
             Assert.True(registerParkingSpace.IsParked, "Vehicle is parked");
+            Assert.False(registerParkingSpace.IsParked, "Vehicle has not been parked");
 
         }
 
